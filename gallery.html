@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazbaa - Past Events Gallery</title> <!-- Updated Title -->
+    <meta name="description" content="Explore past events organized by Jazbaa, Ashoka University's Cultural Ministry, through our interactive timeline gallery.">
+    <link rel="icon" type="image/png" href="assets/Jazbaa final logo-5.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts (Ensure required fonts are linked) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Single Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<!-- Add class for potential page-specific styling -->
+<body class="gallery-page">
+    <!-- Standard Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/JAZBAA.svg" alt="Jazbaa Logo" id="navbar-logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="calendar.html">Events Calendar</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="awaaz.html">Awaaz-e-Jazbaa</a></li>
+                        <!-- Dark mode toggle is removed from here -->
+                    </ul>
+                </div>
+                <!-- Dark Mode Toggle Moved Outside Collapse for easier responsive handling -->
+                 <button id="darkModeToggle" class="dark-mode-toggle ms-lg-3" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- End Standard Header -->
+
+<main>
+    <!-- NEW Gallery HTML Structure -->
+    <section class="cd-horizontal-timeline loaded" id="events">
+        <h1>Past Events</h1>
+        <div class="timeline">
+            <div class="events-wrapper"> <!-- Container for scrolling events -->
+                <div class="events">   <!-- This element holds the line and event LIs -->
+                    <ol>
+                        <!-- Events: DD/MM/YYYY format - Order matters for JS -->
+                        <!-- Ensure the 'selected' class is on the LI of the desired default event -->
+                        <li class="selected"><a href="#0" data-date="10/01/2024" class="selected">Winter Ball</a></li>
+                        <li><a href="#0" data-date="05/01/2024">Garba</a></li>
+                        <li><a href="#0" data-date="12/12/2023">Onam</a></li>
+                        <li><a href="#0" data-date="07/11/2023">Noor-e-Jazbaa</a></li>
+                        <li><a href="#0" data-date="02/09/2023">Ganesh Chaturthi</a></li>
+                        <li><a href="#0" data-date="09/09/2022">Krishna Janmashtami</a></li>
+                        <li><a href="#0" data-date="04/08/2022">Freshers</a></li>
+                        <li><a href="#0" data-date="11/04/2022">Sopaan</a></li>
+                        <li><a href="#0" data-date="06/02/2022">Shaam-e-Jazbaa</a></li>
+                    </ol>
+                    <span class="filling-line" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <!-- Navigation arrows positioned relative to .timeline -->
+            <ul class="cd-timeline-navigation">
+                <li class="prev-nav"><a href="#0" class="prev">Prev</a></li>
+                <li class="next-nav"><a href="#0" class="next">Next</a></li>
+            </ul>
+        </div>
+
+        <div class="events-content">
+             <!-- Event Content OL - Order MUST match timeline OL for JS logic -->
+             <ol>
+                 <li class="selected" data-date="10/01/2024">
+                    <h2>Winter Ball</h2>
+                    <p>Celebrating the season in style with music, dance, and elegant attire.</p>
+                    <div class="gallery">
+                        <img src="assets/images/gallery/IMG_3378.jpg" alt="Students posing at Winter Ball 2024">
+                        <img src="assets/images/gallery/IMG_3379.jpg" alt="Couple dancing at Winter Ball 2024">
+                        <img src="assets/images/gallery/IMG_3449.jpg" alt="Group photo during Winter Ball 2024">
+                    </div>
+                </li>
+                 <li data-date="05/01/2024">
+                    <h2>Garba</h2>
+                    <p>A vibrant night filled with energetic Garba and Dandiya Raas dances.</p>
+                    <div class="gallery">
+                        <img src="assets/images/gallery/IMG_9439.JPG" alt="Dancers in colorful attire at Garba 2024">
+                        <img src="assets/images/gallery/IMG_9444.JPG" alt="Close-up of Garba dance movements">
+                        <img src="assets/images/gallery/IMG_9466.JPG" alt="Wide shot of the Garba event venue">
+                        <img src="assets/images/gallery/IMG_9481.JPG" alt="Attendees enjoying the Garba night">
+                        <img src="assets/images/gallery/IMG_9488.JPG" alt="Musicians playing for the Garba dance">
+                        <img src="assets/images/gallery/IMG_9509.JPG" alt="Another view of dancers at Garba 2024">
+                    </div>
+                </li>
+                <li data-date="12/12/2023">
+                    <h2>Onam</h2>
+                    <p>Celebrating the harvest festival of Kerala with Pookalam, Sadhya, and cultural programs.</p>
+                     <div class="gallery">
+                        <img src="assets/images/gallery/IMG20240913173436.jpg" alt="Onam Pookalam (floral carpet)">
+                        <img src="assets/images/gallery/IMG20240913173409.jpg" alt="Traditional Onam attire">
+                        <img src="assets/images/gallery/IMG20240913172138.jpg" alt="Serving the Onam Sadhya (feast)">
+                        <img src="assets/images/gallery/IMG20240913172014.jpg" alt="Group enjoying the Onam celebrations">
+                        <img src="assets/images/gallery/IMG20240913170057.jpg" alt="Details of Onam decorations">
+                        <img src="assets/images/gallery/IMG20240913170145.jpg" alt="Cultural performance during Onam">
+                        <img src="assets/images/gallery/IMG20240913170722.jpg" alt="Participants in Onam games">
+                        <img src="assets/images/gallery/IMG20240913172419.jpg" alt="Another view of the Pookalam">
+                        <img src="assets/images/gallery/IMG20240913173239.jpg" alt="Smiling faces at the Onam event">
+                    </div>
+                </li>
+                 <li data-date="07/11/2023">
+                    <h2>Noor-e-Jazbaa</h2>
+                    <p>An evening dedicated to the beauty of Urdu poetry, ghazals, and soulful music.</p>
+                    <div class="gallery">
+                        <img src="assets/images/gallery/IMG20241107175200.jpg" alt="Performer reciting poetry at Noor-e-Jazbaa">
+                        <img src="assets/images/gallery/IMG20241107154757.jpg" alt="Musician playing an instrument">
+                        <img src="assets/images/gallery/IMG20241107154748.jpg" alt="Audience listening intently">
+                        <img src="assets/images/gallery/IMG20241107154739.jpg" alt="Stage setup for Noor-e-Jazbaa">
+                        <img src="assets/images/gallery/IMG20241107153054.jpg" alt="Speaker addressing the audience">
+                        <img src="assets/images/gallery/IMG20241107181338.jpg" alt="Atmospheric lighting at the event">
+                        <img src="assets/images/gallery/IMG20241107180503.jpg" alt="Another performer on stage">
+                        <img src="assets/images/gallery/IMG20241107180443.jpg" alt="Guests mingling during Noor-e-Jazbaa">
+                    </div>
+                </li>
+                 <li data-date="02/09/2023">
+                    <h2>Ganesh Chaturthi</h2>
+                     <p>Welcoming Lord Ganesha with devotion, modaks, and festive celebrations.</p>
+                    <div class="gallery">
+                        <img src="assets/images/gallery/IMG_5464.jpeg" alt="Ganesh idol decorated for Chaturthi">
+                        <img src="assets/images/gallery/IMG_5456.jpeg" alt="Devotees offering prayers">
+                        <img src="assets/images/gallery/IMG_5460.jpeg" alt="Close-up of the Ganesh Murti">
+                        <img src="assets/images/gallery/IMG_5479.jpeg" alt="Cultural program during Ganesh Chaturthi">
+                        <img src="assets/images/gallery/IMG_5481.jpeg" alt="Distribution of Prasad">
+                        <img src="assets/images/gallery/IMG_5489.jpeg" alt="Children participating in celebrations">
+                    </div>
+                </li>
+                 <li data-date="09/09/2022">
+                    <h2>Krishna Janmashtami</h2>
+                    <p>Celebrating the birth of Lord Krishna with Matki Phod, bhajans, and cultural dances.</p>
+                    <div class="gallery">
+                        <img src="assets/images/gallery/IMG_5226.jpeg" alt="Krishna Janmashtami decorations">
+                        <img src="assets/images/gallery/Copy of IMG_5234.jpeg" alt="Performance depicting Krishna's life">
+                        <img src="assets/images/gallery/IMG_5220.jpeg" alt="Dahi Handi preparations">
+                        <img src="assets/images/gallery/IMG_5232.jpeg" alt="Participants forming a human pyramid">
+                        <img src="assets/images/gallery/IMG_5244.jpeg" alt="Devotional singing (Bhajans)">
+                        <img src="assets/images/gallery/IMG_5247.jpeg" alt="Children dressed as Krishna and Radha">
+                        <img src="assets/images/gallery/IMG_5250.jpeg" alt="Close-up of the Dahi Handi pot">
+                    </div>
+                </li>
+                 <li data-date="04/08/2022">
+                    <h2>Freshers</h2>
+                    <p>Welcoming the new batch of students with icebreakers, performances, and fun.</p>
+                     <div class="gallery">
+                        <img src="assets/images/gallery/IMG_7157.JPG" alt="New students participating in icebreaker games">
+                        <img src="assets/images/gallery/IMG_7264.JPG" alt="Performance by senior students for freshers">
+                        <img src="assets/images/gallery/IMG_7260.JPG" alt="Group photo of the fresher batch">
+                        <img src="assets/images/gallery/IMG_7185.JPG" alt="Welcome address during Freshers event">
+                        <img src="assets/images/gallery/IMG_7173.JPG" alt="Students enjoying the Freshers party">
+                        <img src="assets/images/gallery/IMG_7121.JPG" alt="Stage performance at Freshers 2022">
+                        <img src="assets/images/gallery/DSC_0823.jpeg" alt="Candid shot of students mingling">
+                        <img src="assets/images/gallery/DSC_0807.jpeg" alt="Another performance at the Freshers event">
+                        <img src="assets/images/gallery/DSC_0805.jpeg" alt="Audience watching the Freshers show">
+                        <img src="assets/images/gallery/DSC_0793.jpeg" alt="Decorations for the Freshers welcome">
+                        <img src="assets/images/gallery/DSC_0778.jpeg" alt="Students interacting during the event">
+                        <img src="assets/images/gallery/DSC_0748.jpeg" alt="Fun activity at Freshers 2022">
+                    </div>
+                </li>
+                 <li data-date="11/04/2022">
+                    <h2>Sopaan</h2>
+                     <p>An event focused on cultural exchange, workshops, and insightful discussions.</p>
+                     <div class="gallery">
+                        <img src="assets/images/gallery/DSC_0269.JPG" alt="Sopaan event stage setup">
+                        <img src="assets/images/gallery/DSC_0271.JPG" alt="Speaker presenting at Sopaan">
+                        <img src="assets/images/gallery/DSC_0265.JPG" alt="Audience at Sopaan event">
+                        <img src="assets/images/gallery/DSC_0208.JPG" alt="Interactive session during Sopaan">
+                        <img src="assets/images/gallery/DSC_0187.JPG" alt="Cultural performance at Sopaan">
+                        <img src="assets/images/gallery/DSC_0164.JPG" alt="Panel discussion at Sopaan">
+                        <img src="assets/images/gallery/DSC_0166.JPG" alt="Networking during Sopaan">
+                        <img src="assets/images/gallery/DSC_0149.JPG" alt="Workshop activity at Sopaan">
+                        <img src="assets/images/gallery/DSC_0135.JPG" alt="Close-up of Sopaan branding">
+                        <img src="assets/images/gallery/DSC_0127.JPG" alt="Guest speaker at Sopaan 2021">
+                        <img src="assets/images/gallery/DSC_0102.JPG" alt="Participants engaged in Sopaan event">
+                        <img src="assets/images/gallery/DSC_0081.JPG" alt="Another view of Sopaan activities">
+                        <img src="assets/images/gallery/DSC_0082.JPG" alt="Concluding moments of Sopaan 2021">
+                    </div>
+                </li>
+                 <li data-date="06/02/2022">
+                    <h2>Shaam-e-Jazbaa</h2>
+                    <p>An enchanting evening showcasing diverse talents in music, dance, and poetry.</p>
+                    <div class="gallery">
+                        <img src="assets/images/gallery/DSC_0714.JPG" alt="Musical performance at Shaam-e-Jazbaa">
+                        <img src="assets/images/gallery/DSC_0711.JPG" alt="Dance performance during the evening">
+                        <img src="assets/images/gallery/DSC_0691.JPG" alt="Poetry reading at Shaam-e-Jazbaa">
+                        <img src="assets/images/gallery/DSC_0678.JPG" alt="Audience enjoying Shaam-e-Jazbaa">
+                        <img src="assets/images/gallery/DSC_0640.JPG" alt="Artist showcasing work">
+                        <img src="assets/images/gallery/DSC_0638.JPG" alt="Stage lighting for Shaam-e-Jazbaa">
+                        <img src="assets/images/gallery/DSC_0624.JPG" alt="Group performance snapshot">
+                        <img src="assets/images/gallery/DSC_0612.JPG" alt="Another musical act">
+                        <img src="assets/images/gallery/DSC_0604.JPG" alt="Close-up of a performer">
+                        <img src="assets/images/gallery/DSC_0594.JPG" alt="Atmosphere of Shaam-e-Jazbaa">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <!-- End NEW Gallery HTML Structure -->
+</main>
+
+    <!-- Standard Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- Column 1: About Jazbaa (Full width on medium and below) -->
+                <div class="col-lg-4 col-md-12 footer-column footer-about">
+                    <div class="footer-logo-title">
+                        <img src="assets/Jazbaa final logo-5.png" alt="Jazbaa Mini Logo" id="footer-logo-img">
+                        <h5>Jazbaa</h5>
+                    </div>
+                    <p class="footer-intro">The Cultural Ministry of Ashoka University, working closely with the Student Life Office (SLO) to foster a vibrant artistic community.</p>
+                     <p class="mt-3"><strong>Join the Cultural Movement!</strong> Be a part of Jazbaa and help us create a vibrant, inclusive cultural ecosystem at Ashoka University.</p>
+                    <div class="footer-socials">
+                         <a href="https://www.instagram.com/jazbaa.ashoka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/JazbaaAshoka" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/jazbaa-the-cultural-ministry/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://form.jotform.com/242996769922074" target="_blank" rel="noopener noreferrer" aria-label="Feedback Form"><i class="fas fa-comment-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation (Side-by-side with Contact on medium+) -->
+                <div class="col-lg-3 col-md-6 col-6 footer-column footer-links">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="awaaz.html">Awaaz-e-Jazbaa</a></li>
+                         <li><a href="https://form.jotform.com/242996769922074" target="_blank" rel="noopener noreferrer">Feedback</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info (Side-by-side with Links on medium+) -->
+                <div class="col-lg-5 col-md-6 col-6 footer-column footer-contact">
+                    <!-- Added ps-md-3 for padding on medium+ -->
+                    <div class="ps-md-3">
+                        <h5>Contact & Resources</h5>
+                        <p><i class="fas fa-map-marker-alt"></i> Ashoka University,<br>Sonipat, Haryana, India</p>
+                        <p><i class="far fa-envelope"></i> <a href="mailto:cultural.ministry@ashoka.edu.in">cultural.ministry@ashoka.edu.in</a></p>
+                         <p><i class="fas fa-university"></i> <a href="https://www.ashoka.edu.in/" target="_blank" rel="noopener noreferrer">Ashoka University Website</a></p>
+                         <p><i class="fas fa-users"></i> <a href="https://www.ashoka.edu.in/student-life/" target="_blank" rel="noopener noreferrer">Student Life Office (SLO)</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Jazbaa - Ashoka University Cultural Ministry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- End Standard Footer -->
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- Single JS File -->
+<script src="script.js"></script>
+ <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // The gallery JS is now included within script.js and initialized there
+</script>
+
+</body>
+</html>

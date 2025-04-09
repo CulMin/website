@@ -1,0 +1,237 @@
+
+  body {
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #FDFFF5; /* Light background */
+    color: #333; /* Darker text for readability */
+    margin: 0;
+  }
+
+/* Header and Navigation */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1030; /* Bootstrap's standard sticky z-index */
+}
+
+header .navbar {
+  /* Use Bootstrap padding/shadow utilities in HTML */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .nav-link {
+  color: black !important; /* Override Bootstrap if needed */
+  font-weight: bold;
+  font-size: 1rem; /* Standard font size */
+  transition: color 0.3s ease;
+  padding: 0.5rem 0.75rem !important; /* Consistent padding */
+  margin-left: 10px; /* Reduced margin */
+}
+
+header .nav-link:hover {
+  color: #365a97 !important;
+  text-decoration: none; /* Remove underline, let hover effect be color change */
+}
+  
+p {
+  color: #b3b3b3;
+  font-weight: 300; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  a, a:hover {
+    text-decoration: none !important; }
+
+.content {
+  padding: 7rem 0; }
+
+h2 {
+  font-size: 20px; }
+
+.form-control:active, .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+#calendar {
+  margin: 0 auto; }
+  #calendar .fc-view-container {
+    background-color: #fff;
+    -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2); }
+  #calendar .fc-toolbar.fc-header-toolbar .fc-center {
+    display: block; }
+
+    #calendar-container {
+      position: relative; 
+    
+      right: 5px;
+      left: 5px;
+      flex-grow: 1;
+      min-height: 80vh;
+      width: 100%;
+      padding-bottom: 20px; /* Prevents overlap */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+        
+    }
+
+.fc-event {
+  border: 1px solid #5070a7;
+  background-color: #5070a7;
+}
+
+.fc-button {
+  background-color: #2b3a52;
+  border: 1px solid #2b3a52;
+}
+a.fc-more {
+  color: black;
+}
+.fc-day-number{
+  color: black;
+}
+.fc-day:hover{
+  background: #d4e6fb;
+}
+.fc-button:hover {
+  border: 1px solid #5070a7;
+  background-color: #5070a7;
+}
+.fc-button-primary:disabled {
+  background-color: #0f60e0;
+  border: 1px solid #0f60e0;
+}
+.fc-unthemed td.fc-today {
+  background: #9cb0c7;
+}
+
+.fc-button-primary:not(:disabled).fc-button-active {
+  border: 1px solid #5070a7;
+  background-color: #5070a7;
+}
+
+.fc-header-toolbar {
+  /*
+    the calendar will be butting up against the edges,
+    but let's scoot in the header's buttons
+    */
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Ensures main content (calendar) expands properly */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #111; /* Darker background */
+  color: #f8f9fa; /* Lighter text */
+  padding-top: 2.5rem; /* Use padding utilities in HTML or define here */
+  padding-bottom: 1.5rem;
+}
+
+.footer h1 {
+  font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+  font-weight: 400; /* Adjusted weight */
+  margin-bottom: 1rem;
+}
+
+.footer .email-container p {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ccc; /* Slightly muted color */
+}
+
+.footer .email-container a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff; /* White link */
+  text-decoration: none;
+}
+.footer .email-container a:hover {
+  text-decoration: underline;
+}
+
+.footer hr.footer-line {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  margin: 1.5rem 0; /* Consistent spacing */
+  width: 60%; /* Line width relative */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-icons a {
+  font-size: 1.5rem; /* Consistent icon size */
+  color: #ccc; /* Muted icon color */
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin: 0 8px; /* Space around icons */
+}
+
+.social-icons a:hover {
+  color: #fff; /* Brighter on hover */
+  transform: scale(1.1);
+}
+
+.footer-bottom p {
+  color: #aaa; /* Muted copyright text */
+  margin: 0;
+  font-size: 0.85rem; /* Slightly smaller */
+}
+
+
+/* --- Responsive Adjustments --- */
+
+/* Adjust navbar link spacing on smaller screens */
+@media (max-width: 991.98px) {
+  header .navbar-nav .nav-link {
+      margin-left: 0;
+      padding-left: 1rem !important; /* Add padding for alignment in collapsed menu */
+      padding-right: 1rem !important;
+  }
+  header .navbar-collapse {
+      margin-top: 10px; /* Space above collapsed menu */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .fc-toolbar {
+    display: block !important;
+    text-align: center; }
+    .fc-toolbar .fc-center {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 20px; } }
+  
+    .footer h1 {
+        font-size: 1.2rem;
+    }
+     .social-icons a {
+        font-size: 1.3rem;
+    }
+     .footer hr.footer-line {
+         width: 80%;
+    }

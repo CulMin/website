@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awaaz-e-Jazbaa - Jazbaa</title>
+    <meta name="description" content="Read the latest issue of Awaaz-e-Jazbaa, the official publication of Ashoka University's Cultural Ministry.">
+    <link rel="icon" type="image/png" href="assets/Jazbaa final logo-5.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Single Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/JAZBAA.svg" alt="Jazbaa Logo" id="navbar-logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item"><a class="nav-link ..." href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link ..." href="team.html">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link ..." href="calendar.html">Events Calendar</a></li>
+                        <li class="nav-item"><a class="nav-link ..." href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link ..." href="awaaz.html">Awaaz-e-Jazbaa</a></li>
+                        <!-- Dark mode toggle is removed from here -->
+                    </ul>
+                </div>
+                <!-- Dark Mode Toggle Moved Outside Collapse for easier responsive handling -->
+                 <button id="darkModeToggle" class="dark-mode-toggle ms-lg-3" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="awaaz-hero">
+            <div id="awaaz-bg-animation"></div>
+            <div class="awaaz-hero-content fade-in">
+                <h1>Awaaz-e-Jazbaa</h1>
+                <p>Explore the creative pulse of Ashoka through our official publication. Dive into student stories, event highlights, and artistic expressions.</p>
+            </div>
+        </section>
+
+        <section class="section-padding fade-in awaaz-flipbook-bg">
+            <!-- Canvas moved outside container, direct child of section -->
+            <canvas id="awaaz-lines-canvas"></canvas>
+           <div class="container position-relative"> <!-- Container is now relative for content stacking -->
+               <h2 class="text-center mb-4">Read the Latest Issue</h2>
+                <p class="text-center text-muted mb-4">Click the flipbook below to read online. Use fullscreen <i class="fas fa-expand ms-1"></i> for the best experience.</p>
+   
+               <!-- Iframe container -->
+               <div class="iframe-container">
+                   <iframe
+                       src="https://publuu.com/flip-book/70373/1717093/page/1?embed"
+                       width="100%"
+                       height="100%"
+                       scrolling="no"
+                       frameborder="0"
+                       allowfullscreen=""
+                       allow="clipboard-write; fullscreen"
+                       title="Awaaz-e-Jazbaa Flipbook">
+                   </iframe>
+               </div>
+                <p class="text-center mt-4"><small>Having trouble viewing? <a href="https://publuu.com/flip-book/70373/1717093" target="_blank" rel="noopener noreferrer">Open in new tab <i class="fas fa-external-link-alt ms-1"></i></a>.</small></p>
+           </div>
+       </section>
+    </main>
+
+    <!-- Updated Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- Column 1: About Jazbaa (Full width on medium and below) -->
+                <div class="col-lg-4 col-md-12 footer-column footer-about">
+                    <div class="footer-logo-title">
+                        <img src="assets/Jazbaa final logo-5.png" alt="Jazbaa Mini Logo" id="footer-logo-img">
+                        <h5>Jazbaa</h5>
+                    </div>
+                    <p class="footer-intro">The Cultural Ministry of Ashoka University, working closely with the Student Life Office (SLO) to foster a vibrant artistic community.</p>
+                     <p class="mt-3"><strong>Join the Cultural Movement!</strong> Be a part of Jazbaa and help us create a vibrant, inclusive cultural ecosystem at Ashoka University.</p>
+                    <div class="footer-socials">
+                         <a href="https://www.instagram.com/jazbaa.ashoka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/JazbaaAshoka" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/jazbaa-the-cultural-ministry/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://form.jotform.com/242996769922074" target="_blank" rel="noopener noreferrer" aria-label="Feedback Form"><i class="fas fa-comment-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation (Side-by-side with Contact on medium+) -->
+                <div class="col-lg-3 col-md-6 col-6 footer-column footer-links">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="awaaz.html">Awaaz-e-Jazbaa</a></li>
+                         <li><a href="https://form.jotform.com/242996769922074" target="_blank" rel="noopener noreferrer">Feedback</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info (Side-by-side with Links on medium+) -->
+                <div class="col-lg-5 col-md-6 col-6 footer-column footer-contact">
+                    <!-- Added ps-md-3 for padding on medium+ -->
+                    <div class="ps-md-3">
+                        <h5>Contact & Resources</h5>
+                        <p><i class="fas fa-map-marker-alt"></i> Ashoka University,<br>Sonipat, Haryana, India</p>
+                        <p><i class="far fa-envelope"></i> <a href="mailto:cultural.ministry@ashoka.edu.in">cultural.ministry@ashoka.edu.in</a></p>
+                         <p><i class="fas fa-university"></i> <a href="https://www.ashoka.edu.in/" target="_blank" rel="noopener noreferrer">Ashoka University Website</a></p>
+                         <p><i class="fas fa-users"></i> <a href="https://www.ashoka.edu.in/student-life/" target="_blank" rel="noopener noreferrer">Student Life Office (SLO)</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Jazbaa - Ashoka University Cultural Ministry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- End Updated Footer -->
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+     <!-- jQuery (Required for Gallery Timeline) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Single JS File -->
+    <script src="script.js"></script>
+     <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Awaaz canvas animation init is now in script.js
+    </script>
+
+</body>
+</html>
