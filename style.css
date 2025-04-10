@@ -372,7 +372,7 @@ body.dark-mode #navbar-logo-link {
 \*------------------------------------*/
 .site-footer {
     background-color: var(--site-footer-bg);
-    color: #e0e0e0;
+    color: #e0e0e0 !important;
     padding: 50px 0 20px 0;
     margin-top: auto;
     transition: background-color var(--transition-speed) ease;
@@ -430,7 +430,7 @@ body.dark-mode .footer-column a:hover { color: var(--primary-color); }
 }
 body.dark-mode .footer-column i { color: var(--accent-color); }
 
-.footer-socials { margin-top: 1.5rem; text-align: left; /* Default */ }
+.footer-socials { margin-top: 1.5rem; /*text-align: left;*/ /* Default */ }
 .footer-socials a {
     font-size: 1.4rem;
     color: #f0f0f0;
@@ -482,9 +482,9 @@ body.dark-mode .footer-bottom {
         justify-content: center; /* Center logo and socials in the first column */
     }
 
-    .footer-links, .footer-contact {
-        text-align: center; /* Center titles */
-    }
+    /* .footer-links, .footer-contact { */
+       /*text-align: center;*/ /* Center titles */
+    /* } */
 
      /* Keep list items left aligned within centered links column */
     .footer-links ul {
@@ -723,7 +723,7 @@ body.dark-mode .no-touch .department-card:hover h3, body.dark-mode .no-touch .de
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Hidden by default */
+    opacity: 1; /* Hidden by default */
     background-color: rgba(0, 0, 0, 0.1); /* Subtle bg on hover */
     transition: opacity var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
@@ -1444,7 +1444,7 @@ body.dark-mode .awaaz-flipbook-bg .text-center.muted-text a { color: var(--prima
     .hod-container { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
     .member-container { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
     .cd-horizontal-timeline .gallery img { height: 180px; }
-    .footer-column { margin-bottom: 25px; }
+    /* .footer-column { margin-bottom: 25px; } */
 }
 
 /* Gallery specific media queries (from new gallery CSS) */
