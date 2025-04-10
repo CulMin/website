@@ -285,32 +285,9 @@ document.addEventListener("DOMContentLoaded", function () {
       let currentView = 'calendar'; // Default view
       // Sample events data (replace with your actual events)
       const events = [
-          // November 2024
-          { date: '2024-11-15', time: '18:00', title: 'Shaam-e-Jazbaa \'24', description: 'Ashoka\'s grand annual cultural evening. Performances, food, and festive vibes!', location: 'MPH Stage' },
-          { date: '2024-11-20', time: '19:00', title: 'Open Mic Night', description: 'Share your poetry, music, comedy, or stories under the stars.', location: 'Amphitheatre' },
-          { date: '2024-11-20', time: '10:00', title: 'Workshop: Madhubani Art', description: 'Learn the basics of this beautiful traditional Indian art form. Materials provided.', location: 'Art Studio (SH4)' },
-          { date: '2024-11-28', time: '17:30', title: 'Film Screening: "Court"', description: 'Screening and discussion of the acclaimed Indian courtroom drama.', location: 'LH 002' },
-          // December 2024
-          { date: '2024-12-01', time: 'All Day', title: 'Inter-Uni Fest Auditions', description: 'Auditions for dance, drama, and music teams representing Ashoka.', location: 'Various (Check SLO notice)' },
-          { date: '2024-12-05', time: '17:00', title: 'Noor-e-Jazbaa', description: 'An evening dedicated to the elegance of Urdu poetry (Shayari) and soulful Ghazals.', location: 'Lecture Hall 3' },
-          { date: '2024-12-10', time: '14:00', title: 'Workshop: Calligraphy', description: 'Introduction to basic calligraphy strokes and styles.', location: 'Common Room, SH2' },
-          { date: '2024-12-18', time: '19:00', title: 'Karaoke Night', description: 'Sing your heart out! End-of-semester stress buster.', location: 'Mess Hall Annex' },
-          { date: '2024-12-24', time: '20:00', title: 'Winter Ball Pre-Event Mixer', description: 'Get hyped for the Winter Ball with music and mocktails.', location: 'DH1 Lounge' },
-          // January 2025
-          { date: '2025-01-10', time: '20:00', title: 'Winter Ball 2025', description: 'The most awaited formal event of the year! Dress to impress.', location: 'MPH' },
-          { date: '2025-01-18', time: '11:00', title: 'Heritage Walk: Mehrauli', description: 'Explore the historical Mehrauli Archaeological Park (Off-campus, sign-up required).', location: 'Bus Departs from Gate 1' },
-          { date: '2025-01-26', time: '09:00', title: 'Republic Day Flag Hoisting', description: 'Campus community gathering.', location: 'Flagpole Area' },
-          // February 2025
-          { date: '2025-02-05', time: '18:30', title: 'Classical Music Concert', description: 'Featuring talented student musicians.', location: 'MPH' },
-          { date: '2025-02-14', time: '19:00', title: 'Valentine\'s Day Acoustic Evening', description: 'Romantic tunes and chill vibes.', location: 'Amphitheatre' },
-          { date: '2025-02-22', time: '13:00', title: 'Food Festival: Taste of India', description: 'Experience diverse regional cuisines prepared by student groups.', location: 'Football Ground Area' },
-          // March 2025
-          { date: '2025-03-01', time: '16:00', title: 'Holi Pre-Celebration', description: 'Music, colours (eco-friendly), and fun!', location: 'Near Volleyball Courts' },
-          { date: '2025-03-08', time: '14:00', title: 'Women\'s Day Panel & Showcase', description: 'Inspiring talks and performances celebrating women.', location: 'Lecture Hall 1' },
-          { date: '2025-03-15', time: '19:00', title: 'Theatre Production: "Untitled"', description: 'Ashoka Theatre Society presents its latest play.', location: 'Black Box Theatre' },
           // April 2025 (Example)
-          { date: '2025-04-05', time: '10:00', title: 'Gardening Workshop', description: 'Learn basic gardening skills and help beautify the campus.', location: 'Near SH1 Lawns' },
-          { date: '2025-04-12', time: '19:30', title: 'Inter-Hostel Dance Off', description: 'Hostels compete for the ultimate dance trophy.', location: 'MPH' },
+          { date: '2025-04-13', time: '18:00', title: 'Baisakhi', description: ' Workshop & Activities.', location: 'Mess Lawns' },
+          { date: '2025-04-19', time: '08:30', title: 'Samaras', description: 'Inclusive Sports Fest of Ashoka.', location: 'AC04 & Sports Block' },
        ];
       const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
