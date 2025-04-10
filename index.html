@@ -20,8 +20,8 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/JAZBAA.svg" alt="Jazbaa Logo" id="navbar-logo">
+                <a class="navbar-brand" id="navbar-logo-link" href="index.html" aria-label="Jazbaa Home">
+                    <!-- The logo will be applied via CSS background -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +47,22 @@
 
     <main>
         <section class="hero">
-           <canvas id="hero-canvas"></canvas>
-           <img src="assets/Jazbaa final logo 2.svg" alt="Jazbaa Vibrant Logo" class="hero-logo fade-in">
+            <!-- Watermark Background -->
+            <div id="hero-watermark"></div>
+
+            <!-- Particle Canvas (Above Watermark, Below Content) -->
+            <canvas id="hero-canvas"></canvas>
+
+            <!-- Hero Content (Top Layer) -->
+            <div class="hero-content fade-in">
+                <span class="hero-subtitle">Cultural Ministry</span>
+                <h1>JAZBAA</h1>
+                <p class="hero-description">Fostering creativity, celebrating diversity, and building a vibrant cultural community at Ashoka University.</p>
+                <div class="hero-buttons">
+                    <a href="calendar.html" class="btn btn-jazbaa">Explore Events</a>
+                    <a href="team.html" class="btn btn-jazbaa-secondary">Meet Our Team</a>
+                </div>
+            </div>
         </section>
 
         <!-- Updated Vision Section -->
@@ -133,7 +147,7 @@
                      <div class="department-card color-2 fade-in">
                          <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
                          <h3>Content, Marketing & Design</h3>
-                         <p>Crafting narratives and visuals to promote culture.</p>
+                         <p>Transforming ideas into visual magic and compelling stories.</p>
                      </div>
                      <div class="department-card color-3 fade-in">
                          <div class="card-icon"><i class="fas fa-coins"></i></div>
@@ -201,8 +215,7 @@
                         <img src="assets/Jazbaa final logo-5.png" alt="Jazbaa Mini Logo" id="footer-logo-img">
                         <h5>Jazbaa</h5>
                     </div>
-                    <p class="footer-intro">The Cultural Ministry of Ashoka University, working closely with the Student Life Office (SLO) to foster a vibrant artistic community.</p>
-                     <p class="mt-3"><strong>Join the Cultural Movement!</strong> Be a part of Jazbaa and help us create a vibrant, inclusive cultural ecosystem at Ashoka University.</p>
+                    <p class="mt-3">Be a part of Jazbaa and help us create a vibrant, inclusive cultural ecosystem at Ashoka University.</p>
                     <div class="footer-socials">
                          <a href="https://www.instagram.com/jazbaa.ashoka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://x.com/JazbaaAshoka" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -231,15 +244,14 @@
                         <h5>Contact & Resources</h5>
                         <p><i class="fas fa-map-marker-alt"></i> Ashoka University,<br>Sonipat, Haryana, India</p>
                         <p><i class="far fa-envelope"></i> <a href="mailto:cultural.ministry@ashoka.edu.in">cultural.ministry@ashoka.edu.in</a></p>
-                         <p><i class="fas fa-university"></i> <a href="https://www.ashoka.edu.in/" target="_blank" rel="noopener noreferrer">Ashoka University Website</a></p>
-                         <p><i class="fas fa-users"></i> <a href="https://www.ashoka.edu.in/student-life/" target="_blank" rel="noopener noreferrer">Student Life Office (SLO)</a></p>
+                        <p><i class="fas fa-university"></i> <a href="https://www.ashoka.edu.in/" target="_blank" rel="noopener noreferrer">Ashoka University Website</a></p>
                     </div>
                 </div>
 
             </div>
 
             <div class="footer-bottom">
-                <p>© <span id="currentYear"></span> Jazbaa - Ashoka University Cultural Ministry. All rights reserved.</p>
+                With ❤️ by Jazbaa Tech
             </div>
         </div>
     </footer>

@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const scaledWidth = heroCanvas.width / dpr;
           const scaledHeight = heroCanvas.height / dpr;
           let numberOfParticles = (scaledWidth * scaledHeight) / 9000;
-          numberOfParticles = Math.min(Math.max(numberOfParticles, 1000), 1500); // Clamp particle count
+          numberOfParticles = Math.min(Math.max(numberOfParticles, 150), 450); // Clamp particle count
           for (let i = 0; i < numberOfParticles; i++) {
               particles.push(new Particle());
           }

@@ -7,15 +7,17 @@
 \*------------------------------------*/
 :root {
     /* Light Mode Colors */
-    --primary-color: #FF8C00; /* Vibrant Orange */
-    --secondary-color: #D2691E; /* Chocolate Brown */
-    --accent-color: #FFA500; /* Lighter Orange */
+    --primary-color: #FF9566; /* Coral/Salmon - new base color */
+    --secondary-color: #E07A5F; /* Darker Coral - complementary darker shade */
+    --accent-color: #FFBC80; /* Light Peach - lighter complementary color */
     --bg-color: #FFF8F0; /* Very light off-white/cream */
     --bg-secondary: #FFFFFF; /* White for cards/navbar */
     --text-color: #212529; /* Darker Grey (Bootstrap's default dark) */
     --text-muted: #5a5a5a; /* Slightly darker muted */
     --border-color: #E0E0E0; /* Light Grey Border */
-    --heading-font: 'Playfair Display', serif;
+    --site-footer-bg: #9B4C37; /* Dark footer background color */
+    --copyright-color: #E0E0E0; /* Light grey for copyright text */
+    --heading-font: 'Poppins', sans-serif;
     --body-font: 'Roboto', sans-serif;
     --playfair-font: 'Playfair Display', serif; /* Font for gallery titles */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -26,14 +28,14 @@
     --border-radius-md: 10px;
     --border-radius-lg: 15px;
 
-    /* Department Card Colors (Light Mode) */
-    --dept-color-1: #ffe8cc;
-    --dept-color-2: #ffd8b0;
-    --dept-color-3: #ffc894;
-    --dept-color-4: #ffb878;
-    --dept-color-5: #ffa85c;
-    --dept-color-6: #ff9840;
-    --dept-color-7: #ff8c00; /* Primary */
+    /* Department Card Colors (Light Mode) - Coral Theme */
+    --dept-color-1: #fff0eb; /* Lightest coral tint */
+    --dept-color-2: #ffe0d5; /* Very light coral */
+    --dept-color-3: #ffd0c0; /* Light coral */
+    --dept-color-4: #ffb8a5; /* Medium light coral */
+    --dept-color-5: #ff9f85; /* Medium coral */
+    --dept-color-6: #ff8a70; /* Medium-dark coral */
+    --dept-color-7: #FF7F5F; /* Vibrant coral - closest to primary color */
 
     /* Add RGB versions for rgba() gradients */
     --bg-color-rgb: 255, 248, 240;
@@ -41,9 +43,9 @@
 
 body.dark-mode {
     /* Dark Mode Colors */
-    --primary-color: #FFA500; /* Lighter Orange */
-    --secondary-color: #F4A460; /* Sandy Brown */
-    --accent-color: #FF8C00; /* Vibrant Orange */
+    --primary-color: #FFA580; /* Lighter Coral - brighter version for dark mode */
+    --secondary-color: #F4A460; /* Sandy Brown - unchanged as requested */
+    --accent-color: #FF7F50; /* Coral - more vibrant version for dark mode */
     --bg-color: #1a1a1a; /* Very Dark Grey/Almost Black */
     --bg-secondary: #2c2c2c; /* Dark Grey for cards/navbar */
     --text-color: #f1f1f1; /* Lighter Grey Text */
@@ -61,6 +63,7 @@ body.dark-mode {
 
      /* Add RGB versions for rgba() gradients */
      --bg-color-rgb: 26, 26, 26;
+     --hero-animation-grd-clr: rgba(255, 149, 102, 0.3); /* Adjusted gradient color for dark mode */
 }
 
 * {
@@ -119,7 +122,7 @@ body.dark-mode .about-us-header h1
 /* body.dark-mode .gallery-title, /* Removed */
 /* body.dark-mode .cd-horizontal-timeline .events-content h2 */
  {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 /* Override Gallery Title font */
 /* .cd-horizontal-timeline h1, /* Removed */
@@ -211,6 +214,10 @@ img, video {
     text-align: center;
     cursor: pointer;
 }
+.btn:hover {
+    background-color: var(--text-color); /* Dark background on hover */
+    color: var(--accent-color); /* Dark text on orange */
+}
 .no-touch .btn-jazbaa:hover {
     background-color: var(--secondary-color);
     color: var(--bg-secondary);
@@ -224,6 +231,10 @@ img, video {
 }
 body.dark-mode .btn-jazbaa {
     color: var(--bg-color); /* Dark text on orange */
+}
+body.dark-mode .btn:hover {
+    background-color: var(--text-color); /* Dark background on hover */
+    color: var(--accent-color); /* Dark text on orange */
 }
 body.dark-mode .no-touch .btn-jazbaa:hover {
      background-color: var(--accent-color);
@@ -253,14 +264,38 @@ html.no-touch .no-touch\\:hover\:bg-secondary:hover { /* Example */
 }
 
 .navbar { padding: 0; } /* Remove Bootstrap padding */
-.navbar-brand { margin-right: auto; } /* Push brand left */
-
-.navbar-brand img#navbar-logo {
-    height: 38px;
-    width: auto;
-    transition: transform var(--transition-speed) ease;
+.navbar-brand {
+    margin-right: auto; /* Push brand left */
+    display: inline-block; /* Treat as block for sizing */
+    line-height: 1; /* Prevent extra space */
+    transition: transform var(--transition-speed) ease; /* Apply hover transform to the link */
 }
-.navbar-brand:hover img#navbar-logo { transform: scale(1.05); }
+
+#navbar-logo-link {
+    display: inline-block;
+    /* --- SET THESE DIMENSIONS BASED ON YOUR SVG --- */
+    width: 161px; /* Width from your SVG viewBox */
+    height: 38px; /* Adjusted height to maintain aspect ratio and fit navbar */
+    /* --- -------------------------------------- --- */
+    background-image: url('assets/jazbaa-light.svg'); /* Default light logo */
+    background-repeat: no-repeat;
+    background-size: contain; /* Ensure the logo fits */
+    background-position: center;
+    transition: background-image 0s ease 0s; /* NO transition for image swap */
+    vertical-align: middle; /* Align nicely with nav links */
+    /* Hide text if needed, aria-label provides accessibility */
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+body.dark-mode #navbar-logo-link {
+    background-image: url('assets/jazbaa-dark.svg'); /* Dark mode logo */
+}
+
+/* Optional: Hover effect if desired */
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
 
 .navbar-nav .nav-link {
     color: var(--text-muted) !important;
@@ -275,6 +310,10 @@ html.no-touch .no-touch\\:hover\:bg-secondary:hover { /* Example */
 .navbar-nav .nav-link::before {
     content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
     width: 0; height: 2px; background-color: var(--primary-color); transition: width var(--transition-speed) ease;
+}
+.navbar-nav .nav-link:hover{
+    color: var(--primary-color) !important; /* Change text color on hover */
+    background-color: rgba(255, 140, 0, 0.08); /* Light background on hover */
 }
 .no-touch .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
@@ -332,7 +371,7 @@ html.no-touch .no-touch\\:hover\:bg-secondary:hover { /* Example */
     #FOOTER (Revised)
 \*------------------------------------*/
 .site-footer {
-    background-color: var(--secondary-color);
+    background-color: var(--site-footer-bg);
     color: #e0e0e0;
     padding: 50px 0 20px 0;
     margin-top: auto;
@@ -387,7 +426,7 @@ body.dark-mode .footer-column a:hover { color: var(--primary-color); }
     margin-right: 10px;
     width: 18px;
     text-align: center;
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 body.dark-mode .footer-column i { color: var(--accent-color); }
 
@@ -409,11 +448,11 @@ body.dark-mode .no-touch .footer-socials a:hover { color: var(--primary-color); 
     padding-top: 20px;
     text-align: center;
     font-size: 0.9rem;
-    color: #c0c0c0;
+    color: var(--copyright-color) !important;
 }
 body.dark-mode .footer-bottom {
     border-top-color: rgba(255, 255, 255, 0.15);
-    color: #909090;
+    color: var(--copyright-color) !important;
 }
 
 /* --- Footer Layout Adjustments --- */
@@ -487,10 +526,146 @@ body.dark-mode .footer-bottom {
 /*------------------------------------*\
     #HOMEPAGE SPECIFIC (index.html)
 \*------------------------------------*/
-.hero { min-height: 65vh; max-height: 550px; display: flex; justify-content: center; align-items: center; overflow: hidden; background: linear-gradient(135deg, var(--bg-color) 0%, var(--accent-color) 150%); padding: 2rem 1rem; position: relative; line-height: 0; }
-body.dark-mode .hero { background: linear-gradient(135deg, var(--bg-color) 0%, var(--secondary-color) 120%); }
-#hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-.hero-logo { max-width: clamp(250px, 60%, 500px); width: auto; height: auto; object-fit: contain; animation: float 6s ease-in-out infinite; filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1)); z-index: 1; position: relative; }
+body.dark-mode .hero { background: linear-gradient(165deg, var(--hero-animation-grd-clr) 0%, var(--bg-color) 120%); }
+/*------------------------------------*\
+    #HERO SECTION (Updated)
+\*------------------------------------*/
+.hero {
+    min-height: 70vh; /* Adjust height as needed */
+    max-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 4rem 1rem;
+    position: relative;
+    text-align: center;
+    background-color: var(--bg-color); /* Base background */
+}
+
+#hero-watermark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/light-hero.svg'); /* Default light mode logo */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto; /* Or 'cover', adjust as needed */
+    opacity: 0.3; /* Make it very faint */
+    z-index: 0;
+    transition: background-image 0s, opacity var(--transition-speed) ease; /* No transition for image swap */
+    pointer-events: none;
+}
+
+body.dark-mode #hero-watermark {
+    background-image: url('assets/dark-hero.svg'); /* Dark mode logo */
+    opacity: 0.15; /* Slightly adjust opacity if needed for dark */
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Above watermark */
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Above canvas */
+    color: var(--text-color);
+    max-width: 750px; /* Limit content width */
+    padding: 2rem;
+    /* Optional: Add a very subtle background blur/tint to improve readability over particles */
+    /* background-color: rgba(var(--bg-color-rgb), 0.1); */
+    /* backdrop-filter: blur(2px); */
+    /* border-radius: var(--border-radius-md); */
+}
+
+.hero-subtitle {
+    display: block;
+    font-family: 'Poppins', sans-serif; /* Example cool font */
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+.hero-content h1 { /* JAZBAA */
+    font-family: var(--heading-font); /* Playfair Display */
+    font-size: clamp(3rem, 10vw, 6rem); /* Make it large */
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+body.dark-mode .hero-content h1 {
+    color: var(--primary-color); /* Use the dark mode primary color */
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: var(--text-muted);
+    margin: 0 auto 2.5rem auto; /* Center and add bottom margin */
+    max-width: 600px;
+    line-height: 1.7;
+}
+body.dark-mode .hero-description {
+     color: var(--text-muted);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Secondary Button Style */
+.btn-jazbaa-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 25px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform 0.2s ease, box-shadow var(--transition-speed) ease;
+    box-shadow: none; /* No initial shadow */
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1.5;
+    text-align: center;
+    cursor: pointer;
+}
+.no-touch .btn-jazbaa-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-secondary); /* Text color on hover (usually light) */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    border-color: var(--primary-color);
+}
+.btn-jazbaa-secondary:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+body.dark-mode .btn-jazbaa-secondary {
+    color: var(--primary-color); /* Text color */
+    border-color: var(--primary-color); /* Border color */
+}
+body.dark-mode .no-touch .btn-jazbaa-secondary:hover {
+     background-color: var(--primary-color);
+     color: var(--bg-color); /* Text color on hover (usually dark) */
+     border-color: var(--primary-color);
+}
 @keyframes float { 0%, 100% { transform: translatey(0px); } 50% { transform: translatey(-12px); } }
 .vision-section { background-color: var(--bg-color); padding: 60px 15px; }
 .vision-content { max-width: 950px; margin: 0 auto; text-align: center; background-color: var(--bg-secondary); padding: 40px; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md); }
@@ -516,7 +691,6 @@ body.dark-mode .hero { background: linear-gradient(135deg, var(--bg-color) 0%, v
 .department-card { border-radius: var(--border-radius-md); padding: 30px 20px; text-align: center; box-shadow: var(--shadow-sm); transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease; display: flex; flex-direction: column; align-items: center; position: relative; overflow: hidden; color: var(--text-color); min-height: 180px; justify-content: center; }
 .no-touch .department-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: var(--shadow-lg); }
 .department-card.color-1 { background-color: var(--dept-color-1); } .department-card.color-2 { background-color: var(--dept-color-2); } .department-card.color-3 { background-color: var(--dept-color-3); } .department-card.color-4 { background-color: var(--dept-color-4); } .department-card.color-5 { background-color: var(--dept-color-5); } .department-card.color-6 { background-color: var(--dept-color-6); } .department-card.color-7 { background-color: var(--dept-color-7); }
-.department-card.color-5, .department-card.color-6, .department-card.color-7 { color: #fff; } .department-card.color-5 h3, .department-card.color-6 h3, .department-card.color-7 h3 { color: #fff; } .department-card.color-5 .card-icon, .department-card.color-6 .card-icon, .department-card.color-7 .card-icon { color: rgba(255,255,255,0.8); }
 .no-touch .department-card.color-5:hover, .no-touch .department-card.color-6:hover, .no-touch .department-card.color-7:hover { background-color: var(--primary-color); color: var(--bg-secondary); }
 .no-touch .department-card.color-5:hover h3, .no-touch .department-card.color-6:hover h3, .no-touch .department-card.color-7:hover h3, .no-touch .department-card.color-5:hover .card-icon, .no-touch .department-card.color-6:hover .card-icon, .no-touch .department-card.color-7:hover .card-icon { color: var(--bg-secondary); }
 body.dark-mode .department-card { color: var(--text-color); } body.dark-mode .department-card h3 { color: var(--text-color); } body.dark-mode .department-card .card-icon { color: var(--primary-color); }
@@ -725,11 +899,11 @@ body.dark-mode .gallery-page body {
     margin-bottom: 1.5em;
     font-family: var(--heading-font); /* Match heading font */
     font-size: clamp(2.2rem, 5vw, 2.8rem); /* Responsive */
-    color: var(--secondary-color); /* Match theme */
+    color: var(--primary-color); /* Match theme */
     font-weight: 700;
 }
 body.dark-mode .cd-horizontal-timeline h1 {
-    color: var(--secondary-color); /* Dark mode secondary */
+    color: var(--primary-color); /* Dark mode secondary */
 }
 
 
@@ -1003,10 +1177,10 @@ body.dark-mode .cd-horizontal-timeline .events-content li {
     font-size: clamp(1.8rem, 4vw, 2.4rem); /* Responsive */
     text-align: center;
     margin-bottom: 0.5em;
-    color: var(--secondary-color); /* Theme secondary */
+    color: var(--primary-color); /* Theme primary */
 }
 body.dark-mode .cd-horizontal-timeline .events-content h2 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .cd-horizontal-timeline .events-content p {
