@@ -21,8 +21,10 @@
     <!-- Single Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- REMOVED Inline <style> block - styles moved to style.css -->
+
 </head>
-<!-- Add class for potential page-specific styling -->
+<!-- Add class for potential page-specific styling, although not strictly necessary now -->
 <body class="gallery-page">
     <!-- Standard Header -->
     <header class="site-header">
@@ -51,59 +53,57 @@
     </header>
     <!-- End Standard Header -->
 
-<main>
-    <!-- NEW Gallery HTML Structure -->
-    <section class="cd-horizontal-timeline loaded" id="events">
-        <h1>Past Events</h1>
-        <div class="timeline">
-            <div class="events-wrapper"> <!-- Container for scrolling events -->
-                <div class="events">   <!-- This element holds the line and event LIs -->
-                    <ol>
-                        <!-- Events: DD/MM/YYYY format - Order matters for JS -->
-                        <!-- Ensure the 'selected' class is on the LI of the desired default event -->
-                        <li class="selected"><a href="#0" data-date="09/09/2022" class="selected">Janmashtami</a></li>
-                        <li><a href="#0" data-date="01/04/2025">Roshn-e-Jazbaa</a></li>
-                        <li><a href="#0" data-date="12/02/2025">Jazbaa Pride</a></li>
-                        <li><a href="#0" data-date="10/01/2024">Winter Ball</a></li>
-                        <li><a href="#0" data-date="02/12/2024">Christmas Stall</a></li>
-                        <!--
-                        <li><a href="#0" data-date="14/09/24">Children's day</a></li>-->
-                        <li><a href="#0" data-date="05/01/2024">Garba</a></li>
-                        <li><a href="#0" data-date="12/12/2023">Onam</a></li>
-                        <li><a href="#0" data-date="07/11/2023">Noor-e-Jazbaa</a></li>
-                        <li><a href="#0" data-date="02/09/2023">Ganesh Chaturthi</a></li>
-                        
-                        <li><a href="#0" data-date="04/08/2022">Freshers</a></li>
-                        <li><a href="#0" data-date="11/04/2022">Sopaan</a></li>
-                        <li><a href="#0" data-date="06/02/2022">Shaam-e-Jazbaa</a></li>
-                        
-                    </ol>
-                    <span class="filling-line" aria-hidden="true"></span>
+<main class="section-padding"> <!-- Added standard padding -->
+    <div class="container"> <!-- Added standard container -->
+        <!-- Gallery Timeline Structure -->
+        <section class="cd-horizontal-timeline loaded" id="events">
+            <h1>Past Events</h1>
+            <div class="timeline">
+                <div class="events-wrapper">
+                    <div class="events">
+                        <ol>
+                            <!-- Events: DD/MM/YYYY format - Order matters for JS -->
+                            <!-- Set the 'selected' class on the LI and its link for the default event -->
+                             <li class="selected"><a href="#0" data-date="09/09/2022" class="selected">Janmashtami</a></li>
+                             <li><a href="#0" data-date="01/04/2025">Roshn-e-Jazbaa</a></li>
+                             <li><a href="#0" data-date="12/02/2025">Jazbaa Pride</a></li>
+                            <li><a href="#0" data-date="10/01/2024">Winter Ball</a></li>
+                             <li><a href="#0" data-date="02/12/2024">Christmas Stall</a></li>
+                             <!--
+                             <li><a href="#0" data-date="14/09/24">Children's day</a></li>-->
+                             <li><a href="#0" data-date="05/01/2024">Garba</a></li>
+                             <li><a href="#0" data-date="12/12/2023">Onam</a></li>
+                             <li><a href="#0" data-date="07/11/2023">Noor-e-Jazbaa</a></li>
+                             <li><a href="#0" data-date="02/09/2023">Ganesh Chaturthi</a></li>
+
+                             <li><a href="#0" data-date="04/08/2022">Freshers</a></li>
+                             <li><a href="#0" data-date="11/04/2022">Sopaan</a></li>
+                             <li><a href="#0" data-date="06/02/2022">Shaam-e-Jazbaa</a></li>
+                        </ol>
+                        <span class="filling-line" aria-hidden="true"></span>
+                    </div>
                 </div>
+
+                <ul class="cd-timeline-navigation">
+                    <li class="prev-nav"><a href="#0" class="prev">Prev</a></li>
+                    <li class="next-nav"><a href="#0" class="next">Next</a></li>
+                </ul>
             </div>
 
-            <!-- Navigation arrows positioned relative to .timeline -->
-            <ul class="cd-timeline-navigation">
-                <li class="prev-nav"><a href="#0" class="prev">Prev</a></li>
-                <li class="next-nav"><a href="#0" class="next">Next</a></li>
-            </ul>
-        </div>
-
-        <div class="events-content">
-            
-             <!-- Event Content OL - Order MUST match timeline OL for JS logic -->
-             <ol>
-                <li data-date="01/04/2025">
-                    <h2>Roshn-e-Jazbaa</h2>
-                    <p>An evening packed with fun, creativity, and a whole lot of heart.</p>
-                    <div class="gallery">
-                        <img src="assets/REJ3.JPG" alt="Roshn-e-jazbaa banner on the rat statue">
-                        <img src="assets/rej14.JPG" alt="The stalls at Roshn-e-Jazbaa">
-                        <img src="assets/REJ2 4.47.23 AM.JPG" alt="Group photo of the banjara stall">
-                        <img src="assets/REJ4.JPG" alt="Jazbaa stall selling stickers">
-                    </div>
+            <div class="events-content">
+                <!-- Event Content OL - Order MUST match timeline OL for JS logic -->
+                 <ol>
+                     <li data-date="01/04/2025">
+                        <h2>Roshn-e-Jazbaa</h2>
+                        <p>An evening packed with fun, creativity, and a whole lot of heart.</p>
+                        <div class="gallery">
+                            <img src="assets/REJ3.JPG" alt="Roshn-e-jazbaa banner on the rat statue">
+                            <img src="assets/rej14.JPG" alt="The stalls at Roshn-e-Jazbaa">
+                            <img src="assets/REJ2 4.47.23 AM.JPG" alt="Group photo of the banjara stall">
+                            <img src="assets/REJ4.JPG" alt="Jazbaa stall selling stickers">
+                        </div>
                     </li>
-                    <li data-date="12/02/2025">
+                     <li data-date="12/02/2025">
                         <h2>Jazbaa Pride</h2>
                         <p>An afternoon filled with warmth, joy, and all the love that makes our campus feel like home. </p>
                         <div class="gallery">
@@ -111,171 +111,167 @@
                             <img src="assets/Pride2.JPG" alt="Students selling art at their stall">
                             <img src="assets/Pride3.JPG" alt="Students at the CODA Stall">
                             <img src="assets/Pride4.JPG" alt="Stickers and make-up being sold at a stall">
-
                         </div>
                     </li>
-                
-                <li data-date="10/01/2024">
-                    <h2>Winter Ball</h2>
-                    <p>Celebrating the season in style with music, dance, and elegant attire.</p>
-                    <div class="gallery">
-                        <img src="assets/images/gallery/IMG_3378.jpg" alt="Students posing at Winter Ball 2024">
-                        <img src="assets/images/gallery/IMG_3379.jpg" alt="Couple dancing at Winter Ball 2024">
-                        <img src="assets/images/gallery/IMG_3449.jpg" alt="Group photo during Winter Ball 2024">
-                    </div>
-                </li>
-                <li data-date="02/12/2024">
-                    <h2>Christmas Stall</h2>
-                    <p>Jazbaa gift-wrapping competition and lucky wish-giving tree event. </p>
-                    <div class="gallery">
-                        <img src="assets/christmas1.JPG" alt="Students posing in front of the Christmas tree">
-                        <img src="assets/christmas2.JPG" alt="Students decorating the white board for the stall">
-                        <img src="assets/christmas3.JPG" alt="Students decorating the wish-giving tree">
-                    </div>
-                </li>
-               <!----
-                <li data-date="14/09/2024">
-                    <h2>Children's day</h2>
-                    <p>An evening of pure bliss, playfulness, nostalgia and heartwarming memories to revisit.</p>
-                    <div class="gallery">
-                        <img src="assets/Children day1.JPG" alt="Students posing in front of the Christmas tree">
-                        <img src="assets/Children day2.JPG" alt="Students decorating the white board for the stall">
-                        <img src="assets/Children day 3.JPG" alt="Students decorating the wish-giving tree">
-                        <img src="assets/Children day 4 2.JPG" alt="Students decorating the wish-giving tree">
-                    </div>
-                    -->
-                </li>
-                 <li data-date="05/01/2024">
-                    <h2>Garba</h2>
-                    <p>A vibrant night filled with energetic Garba and Dandiya Raas dances.</p>
-                    <div class="gallery">
-                        <img src="assets/images/gallery/IMG_9439.JPG" alt="Dancers in colorful attire at Garba 2024">
-                        <img src="assets/images/gallery/IMG_9444.JPG" alt="Close-up of Garba dance movements">
-                        <img src="assets/images/gallery/IMG_9466.JPG" alt="Wide shot of the Garba event venue">
-                        <img src="assets/images/gallery/IMG_9481.JPG" alt="Attendees enjoying the Garba night">
-                        <img src="assets/images/gallery/IMG_9488.JPG" alt="Musicians playing for the Garba dance">
-                        <img src="assets/images/gallery/IMG_9509.JPG" alt="Another view of dancers at Garba 2024">
-                    </div>
-                </li>
-                <li data-date="12/12/2023">
-                    <h2>Onam</h2>
-                    <p>Celebrating the harvest festival of Kerala with Pookalam, Sadhya, and cultural programs.</p>
-                     <div class="gallery">
-                        <img src="assets/images/gallery/IMG20240913173436.jpg" alt="Onam Pookalam (floral carpet)">
-                        <img src="assets/images/gallery/IMG20240913173409.jpg" alt="Traditional Onam attire">
-                        <img src="assets/images/gallery/IMG20240913172138.jpg" alt="Serving the Onam Sadhya (feast)">
-                        <img src="assets/images/gallery/IMG20240913172014.jpg" alt="Group enjoying the Onam celebrations">
-                        <img src="assets/images/gallery/IMG20240913170057.jpg" alt="Details of Onam decorations">
-                        <img src="assets/images/gallery/IMG20240913170145.jpg" alt="Cultural performance during Onam">
-                        <img src="assets/images/gallery/IMG20240913170722.jpg" alt="Participants in Onam games">
-                        <img src="assets/images/gallery/IMG20240913172419.jpg" alt="Another view of the Pookalam">
-                        <img src="assets/images/gallery/IMG20240913173239.jpg" alt="Smiling faces at the Onam event">
-                    </div>
-                </li>
-                 <li data-date="07/11/2023">
-                    <h2>Noor-e-Jazbaa</h2>
-                    <p>An evening dedicated to the beauty of Urdu poetry, ghazals, and soulful music.</p>
-                    <div class="gallery">
-                        <img src="assets/images/gallery/IMG20241107175200.jpg" alt="Performer reciting poetry at Noor-e-Jazbaa">
-                        <img src="assets/images/gallery/IMG20241107154757.jpg" alt="Musician playing an instrument">
-                        <img src="assets/images/gallery/IMG20241107154748.jpg" alt="Audience listening intently">
-                        <img src="assets/images/gallery/IMG20241107154739.jpg" alt="Stage setup for Noor-e-Jazbaa">
-                        <img src="assets/images/gallery/IMG20241107153054.jpg" alt="Speaker addressing the audience">
-                        <img src="assets/images/gallery/IMG20241107181338.jpg" alt="Atmospheric lighting at the event">
-                        <img src="assets/images/gallery/IMG20241107180503.jpg" alt="Another performer on stage">
-                        <img src="assets/images/gallery/IMG20241107180443.jpg" alt="Guests mingling during Noor-e-Jazbaa">
-                    </div>
-                </li>
-                 <li data-date="02/09/2023">
-                    <h2>Ganesh Chaturthi</h2>
-                     <p>Welcoming Lord Ganesha with devotion, modaks, and festive celebrations.</p>
-                    <div class="gallery">
-                        <img src="assets/images/gallery/IMG_5464.jpeg" alt="Ganesh idol decorated for Chaturthi">
-                        <img src="assets/images/gallery/IMG_5456.jpeg" alt="Devotees offering prayers">
-                        <img src="assets/images/gallery/IMG_5460.jpeg" alt="Close-up of the Ganesh Murti">
-                        <img src="assets/images/gallery/IMG_5479.jpeg" alt="Cultural program during Ganesh Chaturthi">
-                        <img src="assets/images/gallery/IMG_5481.jpeg" alt="Distribution of Prasad">
-                        <img src="assets/images/gallery/IMG_5489.jpeg" alt="Children participating in celebrations">
-                    </div>
-                </li>
-                 <li data-date="09/09/2022">
-                    <h2>Janmashtami</h2>
-                    <p>Celebrating the birth of Lord Krishna with Matki Phod, bhajans, and cultural dances.</p>
-                    <div class="gallery">
-                        <img src="assets/images/gallery/IMG_5226.jpeg" alt="Krishna Janmashtami decorations">
-                        <img src="assets/images/gallery/Copy of IMG_5234.jpeg" alt="Performance depicting Krishna's life">
-                        <img src="assets/images/gallery/IMG_5220.jpeg" alt="Dahi Handi preparations">
-                        <img src="assets/images/gallery/IMG_5232.jpeg" alt="Participants forming a human pyramid">
-                        <img src="assets/images/gallery/IMG_5244.jpeg" alt="Devotional singing (Bhajans)">
-                        <img src="assets/images/gallery/IMG_5247.jpeg" alt="Children dressed as Krishna and Radha">
-                        <img src="assets/images/gallery/IMG_5250.jpeg" alt="Close-up of the Dahi Handi pot">
-                    </div>
-                </li>
-                 <li data-date="04/08/2022">
-                    <h2>Freshers</h2>
-                    <p>Welcoming the new batch of students with icebreakers, performances, and fun.</p>
-                     <div class="gallery">
-                        <img src="assets/images/gallery/IMG_7157.JPG" alt="New students participating in icebreaker games">
-                        <img src="assets/images/gallery/IMG_7264.JPG" alt="Performance by senior students for freshers">
-                        <img src="assets/images/gallery/IMG_7260.JPG" alt="Group photo of the fresher batch">
-                        <img src="assets/images/gallery/IMG_7185.JPG" alt="Welcome address during Freshers event">
-                        <img src="assets/images/gallery/IMG_7173.JPG" alt="Students enjoying the Freshers party">
-                        <img src="assets/images/gallery/IMG_7121.JPG" alt="Stage performance at Freshers 2022">
-                        <img src="assets/images/gallery/DSC_0823.jpeg" alt="Candid shot of students mingling">
-                        <img src="assets/images/gallery/DSC_0807.jpeg" alt="Another performance at the Freshers event">
-                        <img src="assets/images/gallery/DSC_0805.jpeg" alt="Audience watching the Freshers show">
-                        <img src="assets/images/gallery/DSC_0793.jpeg" alt="Decorations for the Freshers welcome">
-                        <img src="assets/images/gallery/DSC_0778.jpeg" alt="Students interacting during the event">
-                        <img src="assets/images/gallery/DSC_0748.jpeg" alt="Fun activity at Freshers 2022">
-                    </div>
-                </li>
-                 <li data-date="11/04/2022">
-                    <h2>Sopaan</h2>
-                     <p>An event focused on cultural exchange, workshops, and insightful discussions.</p>
-                     <div class="gallery">
-                        <img src="assets/images/gallery/DSC_0269.JPG" alt="Sopaan event stage setup">
-                        <img src="assets/images/gallery/DSC_0271.JPG" alt="Speaker presenting at Sopaan">
-                        <img src="assets/images/gallery/DSC_0265.JPG" alt="Audience at Sopaan event">
-                        <img src="assets/images/gallery/DSC_0208.JPG" alt="Interactive session during Sopaan">
-                        <img src="assets/images/gallery/DSC_0187.JPG" alt="Cultural performance at Sopaan">
-                        <img src="assets/images/gallery/DSC_0164.JPG" alt="Panel discussion at Sopaan">
-                        <img src="assets/images/gallery/DSC_0166.JPG" alt="Networking during Sopaan">
-                        <img src="assets/images/gallery/DSC_0149.JPG" alt="Workshop activity at Sopaan">
-                        <img src="assets/images/gallery/DSC_0135.JPG" alt="Close-up of Sopaan branding">
-                        <img src="assets/images/gallery/DSC_0127.JPG" alt="Guest speaker at Sopaan 2021">
-                        <img src="assets/images/gallery/DSC_0102.JPG" alt="Participants engaged in Sopaan event">
-                        <img src="assets/images/gallery/DSC_0081.JPG" alt="Another view of Sopaan activities">
-                        <img src="assets/images/gallery/DSC_0082.JPG" alt="Concluding moments of Sopaan 2021">
-                    </div>
-                </li>
-                 <li data-date="06/02/2022">
-                    <h2>Shaam-e-Jazbaa</h2>
-                    <p>An enchanting evening showcasing diverse talents in music, dance, and poetry.</p>
-                    <div class="gallery">
-                        <img src="assets/images/gallery/DSC_0714.JPG" alt="Musical performance at Shaam-e-Jazbaa">
-                        <img src="assets/images/gallery/DSC_0711.JPG" alt="Dance performance during the evening">
-                        <img src="assets/images/gallery/DSC_0691.JPG" alt="Poetry reading at Shaam-e-Jazbaa">
-                        <img src="assets/images/gallery/DSC_0678.JPG" alt="Audience enjoying Shaam-e-Jazbaa">
-                        <img src="assets/images/gallery/DSC_0640.JPG" alt="Artist showcasing work">
-                        <img src="assets/images/gallery/DSC_0638.JPG" alt="Stage lighting for Shaam-e-Jazbaa">
-                        <img src="assets/images/gallery/DSC_0624.JPG" alt="Group performance snapshot">
-                        <img src="assets/images/gallery/DSC_0612.JPG" alt="Another musical act">
-                        <img src="assets/images/gallery/DSC_0604.JPG" alt="Close-up of a performer">
-                        <img src="assets/images/gallery/DSC_0594.JPG" alt="Atmosphere of Shaam-e-Jazbaa">
-                    </div>
-                </li>
-            </ol>
-        </div>
-    </section>
-    <!-- End NEW Gallery HTML Structure -->
+                    <li data-date="10/01/2024">
+                        <h2>Winter Ball</h2>
+                        <p>Celebrating the season in style with music, dance, and elegant attire.</p>
+                        <div class="gallery">
+                            <img src="assets/images/gallery/IMG_3378.jpg" alt="Students posing at Winter Ball 2024">
+                            <img src="assets/images/gallery/IMG_3379.jpg" alt="Couple dancing at Winter Ball 2024">
+                            <img src="assets/images/gallery/IMG_3449.jpg" alt="Group photo during Winter Ball 2024">
+                        </div>
+                    </li>
+                     <li data-date="02/12/2024">
+                        <h2>Christmas Stall</h2>
+                        <p>Jazbaa gift-wrapping competition and lucky wish-giving tree event. </p>
+                        <div class="gallery">
+                            <img src="assets/christmas1.JPG" alt="Students posing in front of the Christmas tree">
+                            <img src="assets/christmas2.JPG" alt="Students decorating the white board for the stall">
+                            <img src="assets/christmas3.JPG" alt="Students decorating the wish-giving tree">
+                        </div>
+                    </li>
+                    <!--
+                     <li data-date="14/09/2024">
+                         <h2>Children's day</h2>
+                         <p>An evening of pure bliss, playfulness, nostalgia and heartwarming memories to revisit.</p>
+                         <div class="gallery">
+                             <img src="assets/Children day1.JPG" alt="Students posing in front of the Christmas tree">
+                             <img src="assets/Children day2.JPG" alt="Students decorating the white board for the stall">
+                             <img src="assets/Children day 3.JPG" alt="Students decorating the wish-giving tree">
+                             <img src="assets/Children day 4 2.JPG" alt="Students decorating the wish-giving tree">
+                         </div>
+                     </li>-->
+                     <li data-date="05/01/2024">
+                        <h2>Garba</h2>
+                        <p>A vibrant night filled with energetic Garba and Dandiya Raas dances.</p>
+                        <div class="gallery">
+                            <img src="assets/images/gallery/IMG_9439.JPG" alt="Dancers in colorful attire at Garba 2024">
+                            <img src="assets/images/gallery/IMG_9444.JPG" alt="Close-up of Garba dance movements">
+                            <img src="assets/images/gallery/IMG_9466.JPG" alt="Wide shot of the Garba event venue">
+                            <img src="assets/images/gallery/IMG_9481.JPG" alt="Attendees enjoying the Garba night">
+                            <img src="assets/images/gallery/IMG_9488.JPG" alt="Musicians playing for the Garba dance">
+                            <img src="assets/images/gallery/IMG_9509.JPG" alt="Another view of dancers at Garba 2024">
+                        </div>
+                    </li>
+                     <li data-date="12/12/2023">
+                        <h2>Onam</h2>
+                        <p>Celebrating the harvest festival of Kerala with Pookalam, Sadhya, and cultural programs.</p>
+                         <div class="gallery">
+                            <img src="assets/images/gallery/IMG20240913173436.jpg" alt="Onam Pookalam (floral carpet)">
+                            <img src="assets/images/gallery/IMG20240913173409.jpg" alt="Traditional Onam attire">
+                            <img src="assets/images/gallery/IMG20240913172138.jpg" alt="Serving the Onam Sadhya (feast)">
+                            <img src="assets/images/gallery/IMG20240913172014.jpg" alt="Group enjoying the Onam celebrations">
+                            <img src="assets/images/gallery/IMG20240913170057.jpg" alt="Details of Onam decorations">
+                            <img src="assets/images/gallery/IMG20240913170145.jpg" alt="Cultural performance during Onam">
+                            <img src="assets/images/gallery/IMG20240913170722.jpg" alt="Participants in Onam games">
+                            <img src="assets/images/gallery/IMG20240913172419.jpg" alt="Another view of the Pookalam">
+                            <img src="assets/images/gallery/IMG20240913173239.jpg" alt="Smiling faces at the Onam event">
+                        </div>
+                    </li>
+                     <li data-date="07/11/2023">
+                        <h2>Noor-e-Jazbaa</h2>
+                        <p>An evening dedicated to the beauty of Urdu poetry, ghazals, and soulful music.</p>
+                        <div class="gallery">
+                            <img src="assets/images/gallery/IMG20241107175200.jpg" alt="Performer reciting poetry at Noor-e-Jazbaa">
+                            <img src="assets/images/gallery/IMG20241107154757.jpg" alt="Musician playing an instrument">
+                            <img src="assets/images/gallery/IMG20241107154748.jpg" alt="Audience listening intently">
+                            <img src="assets/images/gallery/IMG20241107154739.jpg" alt="Stage setup for Noor-e-Jazbaa">
+                            <img src="assets/images/gallery/IMG20241107153054.jpg" alt="Speaker addressing the audience">
+                            <img src="assets/images/gallery/IMG20241107181338.jpg" alt="Atmospheric lighting at the event">
+                            <img src="assets/images/gallery/IMG20241107180503.jpg" alt="Another performer on stage">
+                            <img src="assets/images/gallery/IMG20241107180443.jpg" alt="Guests mingling during Noor-e-Jazbaa">
+                        </div>
+                    </li>
+                     <li data-date="02/09/2023">
+                        <h2>Ganesh Chaturthi</h2>
+                         <p>Welcoming Lord Ganesha with devotion, modaks, and festive celebrations.</p>
+                        <div class="gallery">
+                            <img src="assets/images/gallery/IMG_5464.jpeg" alt="Ganesh idol decorated for Chaturthi">
+                            <img src="assets/images/gallery/IMG_5456.jpeg" alt="Devotees offering prayers">
+                            <img src="assets/images/gallery/IMG_5460.jpeg" alt="Close-up of the Ganesh Murti">
+                            <img src="assets/images/gallery/IMG_5479.jpeg" alt="Cultural program during Ganesh Chaturthi">
+                            <img src="assets/images/gallery/IMG_5481.jpeg" alt="Distribution of Prasad">
+                            <img src="assets/images/gallery/IMG_5489.jpeg" alt="Children participating in celebrations">
+                        </div>
+                    </li>
+                     <li class="selected" data-date="09/09/2022">
+                        <h2>Janmashtami</h2>
+                        <p>Celebrating the birth of Lord Krishna with Matki Phod, bhajans, and cultural dances.</p>
+                        <div class="gallery">
+                            <img src="assets/images/gallery/IMG_5226.jpeg" alt="Krishna Janmashtami decorations">
+                            <img src="assets/images/gallery/Copy of IMG_5234.jpeg" alt="Performance depicting Krishna's life">
+                            <img src="assets/images/gallery/IMG_5220.jpeg" alt="Dahi Handi preparations">
+                            <img src="assets/images/gallery/IMG_5232.jpeg" alt="Participants forming a human pyramid">
+                            <img src="assets/images/gallery/IMG_5244.jpeg" alt="Devotional singing (Bhajans)">
+                            <img src="assets/images/gallery/IMG_5247.jpeg" alt="Children dressed as Krishna and Radha">
+                            <img src="assets/images/gallery/IMG_5250.jpeg" alt="Close-up of the Dahi Handi pot">
+                        </div>
+                    </li>
+                     <li data-date="04/08/2022">
+                        <h2>Freshers</h2>
+                        <p>Welcoming the new batch of students with icebreakers, performances, and fun.</p>
+                         <div class="gallery">
+                            <img src="assets/images/gallery/IMG_7157.JPG" alt="New students participating in icebreaker games">
+                            <img src="assets/images/gallery/IMG_7264.JPG" alt="Performance by senior students for freshers">
+                            <img src="assets/images/gallery/IMG_7260.JPG" alt="Group photo of the fresher batch">
+                            <img src="assets/images/gallery/IMG_7185.JPG" alt="Welcome address during Freshers event">
+                            <img src="assets/images/gallery/IMG_7173.JPG" alt="Students enjoying the Freshers party">
+                            <img src="assets/images/gallery/IMG_7121.JPG" alt="Stage performance at Freshers 2022">
+                            <img src="assets/images/gallery/DSC_0823.jpeg" alt="Candid shot of students mingling">
+                            <img src="assets/images/gallery/DSC_0807.jpeg" alt="Another performance at the Freshers event">
+                            <img src="assets/images/gallery/DSC_0805.jpeg" alt="Audience watching the Freshers show">
+                            <img src="assets/images/gallery/DSC_0793.jpeg" alt="Decorations for the Freshers welcome">
+                            <img src="assets/images/gallery/DSC_0778.jpeg" alt="Students interacting during the event">
+                            <img src="assets/images/gallery/DSC_0748.jpeg" alt="Fun activity at Freshers 2022">
+                        </div>
+                    </li>
+                     <li data-date="11/04/2022">
+                        <h2>Sopaan</h2>
+                         <p>An event focused on cultural exchange, workshops, and insightful discussions.</p>
+                         <div class="gallery">
+                            <img src="assets/images/gallery/DSC_0269.JPG" alt="Sopaan event stage setup">
+                            <img src="assets/images/gallery/DSC_0271.JPG" alt="Speaker presenting at Sopaan">
+                            <img src="assets/images/gallery/DSC_0265.JPG" alt="Audience at Sopaan event">
+                            <img src="assets/images/gallery/DSC_0208.JPG" alt="Interactive session during Sopaan">
+                            <img src="assets/images/gallery/DSC_0187.JPG" alt="Cultural performance at Sopaan">
+                            <img src="assets/images/gallery/DSC_0164.JPG" alt="Panel discussion at Sopaan">
+                            <img src="assets/images/gallery/DSC_0166.JPG" alt="Networking during Sopaan">
+                            <img src="assets/images/gallery/DSC_0149.JPG" alt="Workshop activity at Sopaan">
+                            <img src="assets/images/gallery/DSC_0135.JPG" alt="Close-up of Sopaan branding">
+                            <img src="assets/images/gallery/DSC_0127.JPG" alt="Guest speaker at Sopaan 2021">
+                            <img src="assets/images/gallery/DSC_0102.JPG" alt="Participants engaged in Sopaan event">
+                            <img src="assets/images/gallery/DSC_0081.JPG" alt="Another view of Sopaan activities">
+                            <img src="assets/images/gallery/DSC_0082.JPG" alt="Concluding moments of Sopaan 2021">
+                        </div>
+                    </li>
+                     <li data-date="06/02/2022">
+                        <h2>Shaam-e-Jazbaa</h2>
+                        <p>An enchanting evening showcasing diverse talents in music, dance, and poetry.</p>
+                        <div class="gallery">
+                            <img src="assets/images/gallery/DSC_0714.JPG" alt="Musical performance at Shaam-e-Jazbaa">
+                            <img src="assets/images/gallery/DSC_0711.JPG" alt="Dance performance during the evening">
+                            <img src="assets/images/gallery/DSC_0691.JPG" alt="Poetry reading at Shaam-e-Jazbaa">
+                            <img src="assets/images/gallery/DSC_0678.JPG" alt="Audience enjoying Shaam-e-Jazbaa">
+                            <img src="assets/images/gallery/DSC_0640.JPG" alt="Artist showcasing work">
+                            <img src="assets/images/gallery/DSC_0638.JPG" alt="Stage lighting for Shaam-e-Jazbaa">
+                            <img src="assets/images/gallery/DSC_0624.JPG" alt="Group performance snapshot">
+                            <img src="assets/images/gallery/DSC_0612.JPG" alt="Another musical act">
+                            <img src="assets/images/gallery/DSC_0604.JPG" alt="Close-up of a performer">
+                            <img src="assets/images/gallery/DSC_0594.JPG" alt="Atmosphere of Shaam-e-Jazbaa">
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </div> <!-- End standard container -->
 </main>
 
-    <!-- Updated Footer -->
+    <!-- Standard Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="row gy-4">
-
-                <!-- Column 1: About Jazbaa (Full width on medium and below) -->
+                <!-- Column 1: About Jazbaa -->
                 <div class="col-lg-4 col-md-12 footer-column footer-about">
                     <div class="footer-logo-title">
                         <img src="assets/Jazbaa final logo-5.png" alt="Jazbaa Mini Logo" id="footer-logo-img">
@@ -289,8 +285,7 @@
                         <a href="https://form.jotform.com/242996769922074" target="_blank" rel="noopener noreferrer" aria-label="Feedback Form"><i class="fas fa-comment-alt"></i></a>
                     </div>
                 </div>
-
-                <!-- Column 2: Navigation (Side-by-side with Contact on medium+) -->
+                <!-- Column 2: Navigation -->
                 <div class="col-lg-3 col-md-6 col-6 footer-column footer-links">
                     <h5>Quick Links</h5>
                     <ul>
@@ -302,26 +297,25 @@
                          <li><a href="https://form.jotform.com/242996769922074" target="_blank" rel="noopener noreferrer">Feedback</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 3: Contact Info (Side-by-side with Links on medium+) -->
+                <!-- Column 3: Contact Info -->
                 <div class="col-lg-5 col-md-6 col-6 footer-column footer-contact">
-                    <!-- Added ps-md-3 for padding on medium+ -->
                     <div class="ps-md-3">
                         <h5>Contact & Resources</h5>
                         <p><i class="fas fa-map-marker-alt"></i> Ashoka University,<br>Sonipat, Haryana, India</p>
                         <p><i class="far fa-envelope"></i> <a href="mailto:cultural.ministry@ashoka.edu.in">cultural.ministry@ashoka.edu.in</a></p>
-                        <p><i class="fas fa-university"></i> <a href="https://www.ashoka.edu.in/" target="_blank" rel="noopener noreferrer">Ashoka University Website</a></p>
+                         <p><i class="fas fa-university"></i> <a href="https://www.ashoka.edu.in/" target="_blank" rel="noopener noreferrer">Ashoka University Website</a></p>
                     </div>
                 </div>
-
             </div>
-
             <div class="footer-bottom">
-                With ❤️ by Jazbaa Tech
+                <!-- Use standard copyright text structure if desired -->
+                <p>© <span id="currentYear"></span> Jazbaa - Ashoka University Cultural Ministry. All rights reserved.</p>
+                <!-- Or keep custom text -->
+                <!-- With ❤️ by Jazbaa Tech -->
             </div>
         </div>
     </footer>
-    <!-- End Updated Footer -->
+    <!-- End Standard Footer -->
 
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -330,7 +324,11 @@
 <!-- Single JS File -->
 <script src="script.js"></script>
  <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // Ensure currentYear span exists if using standard copyright text
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
     // The gallery JS is now included within script.js and initialized there
 </script>
 
