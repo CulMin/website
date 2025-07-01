@@ -284,7 +284,7 @@ body.dark-mode .hero-description { color: var(--text-muted); }
 .carousel .carousel-indicators .active { opacity: 1; transform: scale(1.1); }
 .structure-section { background-color: var(--bg-secondary); }
 .structure-section h2 { text-align: center; }
-.structure-section .text-muted { max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-muted); } /* Ensure explicit color */
+.structure-section .text-muted { max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-muted) !important; } /* Ensure explicit color */
 body.dark-mode .structure-section .text-muted { color: var(--text-muted); }
 .department-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; max-width: 1000px; margin: 40px auto 0 auto; }
 .department-card { border-radius: var(--border-radius-md); padding: 30px 20px; text-align: center; box-shadow: var(--shadow-sm); transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease; display: flex; flex-direction: column; align-items: center; position: relative; overflow: hidden; color: var(--text-color); min-height: 180px; justify-content: center; }
@@ -360,7 +360,7 @@ body.dark-mode .profile-card.member-card p { color: var(--secondary-color); }
 \*------------------------------------*/
 .gallery-page body { font-family: var(--body-font); color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
 body.dark-mode .gallery-page body { color: var(--text-color); background-color: var(--bg-color); }
-.gallery-page a { color: var(--primary-color); text-decoration: none; }
+.gallery-page a { text-decoration: none; }
 .gallery-page a:hover { text-decoration: none; color: var(--accent-color); }
 
 .cd-horizontal-timeline { opacity: 0; margin: 3em auto; padding: 1em 0; transition: opacity 0.2s; width: 90%; max-width: 1100px; }
@@ -521,6 +521,138 @@ body.dark-mode .awaaz-flipbook-bg .text-center.muted-text a { color: var(--prima
 #awaaz-lines-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.6; }
 .iframe-container { position: relative; z-index: 1; overflow: hidden; width: 100%; aspect-ratio: 4 / 3; margin: 30px auto; max-width: 1000px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-lg); background-color: var(--bg-secondary); border: 1px solid var(--border-color); }
 .iframe-container iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; }
+
+
+/*------------------------------------*\
+    #PETS PAGE SPECIFIC (pets.html)
+\*------------------------------------*/
+
+/* Particles Background for Pets Page */
+#particles-js-pets {
+    position: fixed; /* Or absolute if main content scrolls over it */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind other content */
+    background-color: var(--bg-color); /* Use theme background */
+}
+body.dark-mode #particles-js-pets {
+    background-color: var(--bg-color); /* Use theme background */
+}
+
+.pets-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Spacing between cards */
+    padding: 20px 0;
+    justify-items: center; /* Center cards in their grid cells */
+}
+
+.pet-card {
+  width: 100%; /* Make card take full width of its grid cell */
+  max-width: 350px; /* Max width of a card */
+  height: 380px;  /* Increased height for more content */
+  perspective: 1000px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Add some bottom margin for stacking on small screens */
+}
+
+.pet-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1); /* Smoother transition */
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+}
+
+.pet-card.flipped .pet-card-inner {
+  transform: rotateY(180deg);
+}
+
+.pet-card-front, .pet-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius-md); /* Consistent border radius */
+  overflow: hidden; /* Ensure content respects border radius */
+}
+
+.pet-card-front {
+    background-color: var(--bg-secondary); /* Use theme secondary bg */
+}
+
+.pet-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius already on .pet-card-front */
+}
+
+.pet-card-back {
+  background-color: var(--primary-color); /* Use theme primary */
+  color: #fff; /* Light text on primary background */
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Increased padding */
+  text-align: center;
+  font-family: var(--body-font);
+}
+body.dark-mode .pet-card-back {
+    background-color: var(--primary-color); /* Dark mode primary */
+    color: var(--bg-color); /* Dark text on light button */
+}
+
+.pet-card-back h3 {
+  font-family: var(--heading-font);
+  color: inherit; /* Inherit from .pet-card-back */
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem; /* Consistent heading size */
+}
+
+.pet-card-back p {
+  font-size: 0.9rem; /* Consistent paragraph size */
+  margin-bottom: 8px;
+  color: inherit; /* Inherit from .pet-card-back */
+  line-height: 1.5;
+}
+.pet-card-back p strong {
+    font-weight: 600; /* Make strong tags bolder */
+}
+
+/* Responsive adjustments for pet cards */
+@media (max-width: 768px) {
+    .pets-card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .pet-card {
+        height: 350px;
+    }
+}
+@media (max-width: 480px) {
+    .pets-card-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+     .pet-card {
+        max-width: 100%; /* Allow card to take full width */
+        height: 320px;
+    }
+    .pet-card-back h3 {
+        font-size: 1.3rem;
+    }
+    .pet-card-back p {
+        font-size: 0.85rem;
+    }
+}
+
 
 /*------------------------------------*\
     #RESPONSIVE ADJUSTMENTS

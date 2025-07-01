@@ -571,7 +571,74 @@ document.addEventListener("DOMContentLoaded", function () {
         if (nextOverlay) nextOverlay.addEventListener('click', () => carouselInstance.next());
     }
 
+    // --- Pets of Jazbaa Card Generation ---
+if (document.getElementById('pets-card-container')) { // Check if on pets page
+    let lastFlippedPetCard = null;
 
+    function generatePetCards() {
+        const container = document.getElementById("pets-card-container");
+        if (!container) return; // Safety check
+        container.innerHTML = ""; // Clear existing cards
+
+        // The 'dogs' array is available globally from js/data.js
+        if (typeof dogs !== 'undefined' && dogs.length > 0) {
+            dogs.forEach(dog => {
+                const card = document.createElement("div");
+                card.classList.add("pet-card"); // Use new class name
+
+                card.innerHTML = `
+                    <div class="pet-card-inner">
+                        <div class="pet-card-front">
+                            <img src="${dog.image}" alt="${dog.name}">
+                        </div>
+                        <div class="pet-card-back">
+                            <h3>${dog.name}</h3>
+                            <p><strong>Parent:</strong> ${dog.parent}</p>
+                            <p><strong>Age:</strong> ${dog.age}</p>
+                            <p><strong>Personality:</strong> ${dog.personality}</p>
+                        </div>
+                    </div>
+                `;
+
+                card.addEventListener("click", (event) => {
+                    event.stopPropagation();
+
+                    if (lastFlippedPetCard && lastFlippedPetCard !== card) {
+                        lastFlippedPetCard.classList.remove("flipped");
+                    }
+
+                    const isFlipped = card.classList.toggle("flipped");
+                    lastFlippedPetCard = isFlipped ? card : null;
+                });
+                container.appendChild(card);
+            });
+        } else {
+            container.innerHTML = "<p class='text-center text-muted'>No pet data found or 'dogs' array is empty.</p>";
+        }
+    }
+
+    generatePetCards(); // Call the function to generate cards on page load
+
+    // Close flipped card if clicking outside
+    document.addEventListener('click', function (event) {
+        if (lastFlippedPetCard && !lastFlippedPetCard.contains(event.target)) {
+            lastFlippedPetCard.classList.remove('flipped');
+            lastFlippedPetCard = null;
+        }
+    });
+}
+
+    // --- Particles.js for Pets Page ---
+    if (document.getElementById('particles-js-pets')) {
+        particlesJS.load('particles-js-pets', 'assets/particles.json', function() {
+            console.log('particles.js config loaded for pets page');
+            // Optional: Adjust particle color based on dark mode after loading
+            // This depends on how particles.js allows runtime updates.
+            // For now, particles.json might need separate light/dark versions or a generic color.
+        });
+    }
+
+    
     // --- NEW Gallery Timeline Initialization (jQuery required) ---
     if (typeof jQuery !== 'undefined' && $('.cd-horizontal-timeline').length > 0) {
         jQuery(document).ready(function($){ // Ensure this wrapper remains
