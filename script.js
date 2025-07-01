@@ -222,29 +222,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const departmentBlocks = document.querySelectorAll('.department-block');
     if (departmentBlocks.length > 0) {
         departmentBlocks.forEach(block => {
-            const hodContainer = block.querySelector('.hod-container');
-            const memberContainer = block.querySelector('.member-container');
             const headerWrapper = block.querySelector('.department-header-wrapper');
-            const hodCount = hodContainer ? hodContainer.querySelectorAll('.profile-card.hod-card').length : 0;
-            const memberCount = memberContainer ? memberContainer.querySelectorAll('.profile-card.member-card').length : 0;
-            const totalCount = hodCount + memberCount;
+            if (!headerWrapper) return; // Skip if no header found
 
-            if (headerWrapper && totalCount > 0) {
-                 let countSpan = headerWrapper.querySelector('.member-count');
-                 if (!countSpan) {
-                     countSpan = document.createElement('span');
-                     countSpan.classList.add('member-count');
-                     headerWrapper.appendChild(countSpan);
-                 }
-                countSpan.textContent = `${totalCount} Member${totalCount > 1 ? 's' : ''}`;
-            } else if (headerWrapper && block.id === 'core-ministry' && hodCount > 0) {
-                let countSpan = headerWrapper.querySelector('.member-count');
-                if (!countSpan) {
-                    countSpan = document.createElement('span');
-                    countSpan.classList.add('member-count');
-                    headerWrapper.appendChild(countSpan);
+            // Use a more robust selector to find all profile cards within the block
+            const totalCards = block.querySelectorAll('.profile-card');
+            const totalCount = totalCards.length;
+            
+            // Find or create the count span
+            let countSpan = headerWrapper.querySelector('.member-count');
+            if (!countSpan) {
+                countSpan = document.createElement('span');
+                countSpan.classList.add('member-count');
+                headerWrapper.appendChild(countSpan);
+            }
+
+            // Set the text content based on the total count
+            if (totalCount > 0) {
+                // Special label for Core Ministry if desired
+                if (block.id === 'core-ministry') {
+                    countSpan.textContent = `${totalCount} Members${totalCount > 1 ? 's' : ''}`;
+                } else {
+                    countSpan.textContent = `${totalCount} Member${totalCount > 1 ? 's' : ''}`;
                 }
-                countSpan.textContent = `${hodCount} Leader${hodCount > 1 ? 's' : ''}`;
+            } else {
+                // Hide or remove the count span if there are no members
+                countSpan.style.display = 'none';
             }
         });
     }
@@ -638,7 +641,7 @@ if (document.getElementById('pets-card-container')) { // Check if on pets page
         });
     }
 
-    
+
     // --- NEW Gallery Timeline Initialization (jQuery required) ---
     if (typeof jQuery !== 'undefined' && $('.cd-horizontal-timeline').length > 0) {
         jQuery(document).ready(function($){ // Ensure this wrapper remains
